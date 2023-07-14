@@ -4,3 +4,9 @@ spring:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+kafka:
+  topic:
+    name: wikimedia_recentChange
+wikimedia:
+  stream:
+    url: https://stream.wikimedia.org/v2/stream/recentchange

@@ -11,8 +11,8 @@ public class WikimediaChangeHandler implements EventHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(WikimediaChangeHandler.class);
 
 
-    private KafkaTemplate<String, String> kafkaTemplate;
-    private String topic;
+    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final String topic;
 
     public WikimediaChangeHandler(KafkaTemplate<String, String> kafkaTemplate, String topic) {
         this.kafkaTemplate = kafkaTemplate;

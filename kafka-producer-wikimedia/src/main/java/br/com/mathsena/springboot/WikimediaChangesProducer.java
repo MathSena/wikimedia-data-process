@@ -3,9 +3,8 @@ package br.com.mathsena.springboot;
 import com.launchdarkly.eventsource.EventHandler;
 import com.launchdarkly.eventsource.EventSource;
 import org.slf4j.LoggerFactory;
-
-
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +16,12 @@ public class WikimediaChangesProducer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(WikimediaChangesProducer.class);
 
+    @Value("${kafka.topic.name}")
+    private String topic;
+
+    @Value("${wikimedia.stream.url}")
+    private String url;
+
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     public WikimediaChangesProducer(KafkaTemplate<String, String> kafkaTemplate){
@@ -24,9 +29,6 @@ public class WikimediaChangesProducer {
     }
 
     public void sendMessage() {
-        String topic = "wikimedia_recentChange";
-        String url = "https://stream.wikimedia.org/v2/stream/recentchange";
-
         EventHandler eventHandler = new WikimediaChangeHandler(kafkaTemplate, topic);
         EventSource.Builder builder = new EventSource.Builder(eventHandler, URI.create(url));
 

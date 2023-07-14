@@ -21,34 +21,23 @@
 
     <!-- Dependências do projeto -->
     <dependencies>
-        <!-- Adicione as dependências necessárias do projeto aqui -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.26</version> <!-- A versão aqui pode variar dependendo da versão que você precisa -->
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <!-- Plugins do projeto -->
     <build>
         <plugins>
             <!-- Compilador Maven -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-            </plugin>
-
-            <!-- Plugin para criar um JAR executável -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.2</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <!-- Substitua com sua classe main -->
-                            <mainClass>package br.com.mathsena.springboot.SpringBootConsumerApplication</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 </project>
