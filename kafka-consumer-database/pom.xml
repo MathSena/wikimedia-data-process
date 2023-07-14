@@ -44,7 +44,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <!-- Substitua com sua classe main -->
-                            <mainClass>com.mathsena.YourMainClass</mainClass>
+                            <mainClass>package br.com.mathsena.springboot.SpringBootConsumerApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
