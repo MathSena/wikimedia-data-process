@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>wikimedia-data-process</artifactId>
+        <groupId>com.mathsena</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <artifactId>kafka-consumer-database</artifactId>
+    <name>Archetype - kafka-consumer-database</name>
+    <description>This is a Kafka consumer project that interfaces with a database</description> <!-- A descrição do projeto -->
+    <url>http://maven.apache.org</url>
+
+    <!-- Propriedades do projeto -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source> <!-- Especifique a versão do Java -->
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <!-- Dependências do projeto -->
+    <dependencies>
+        <!-- Adicione as dependências necessárias do projeto aqui -->
+    </dependencies>
+
+    <!-- Plugins do projeto -->
+    <build>
+        <plugins>
+            <!-- Compilador Maven -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+
+            <!-- Plugin para criar um JAR executável -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <!-- Substitua com sua classe main -->
+                            <mainClass>com.mathsena.YourMainClass</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
